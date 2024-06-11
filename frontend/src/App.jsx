@@ -1,7 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const App = () => {
   const [jokes, setJokes] = useState([])
+
+  useEffect(() => {
+    axios.get('/api/jokes')
+    .then((response) => {
+      setJokes(response.data)
+    })
+    .catch((error) => {
+      console.log("Error Occured: ", error);
+    })
+  }, [])
+
   return (
     <div>
       <h1>Jokes: {jokes.length}</h1>

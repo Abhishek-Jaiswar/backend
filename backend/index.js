@@ -6,11 +6,11 @@ dotenv.config()
 
 const PORT = process.env.PORT || 8000
 
-// app.get('/', (req, res) => {
-//     res.send("Hello world")
-// })
+app.get('/', (req, res) => {
+    res.send("Hello world")
+})
 
-app.get('/jokes', (req, res) => {
+app.get('/api/jokes', (req, res) => {
     const jokes = [
         {
             id: 1,
