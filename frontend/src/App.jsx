@@ -23,7 +23,9 @@ const App = () => {
            <p>{joke.content}</p>
         </div>
       ))}
+      
     </div>
+
   )
 }
 
