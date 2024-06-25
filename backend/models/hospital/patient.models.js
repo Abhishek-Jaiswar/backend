@@ -10,6 +10,10 @@ const patientSchema = new mongoose.Schema(
             type: String,
             required: true
         },
+        registrationNo: {
+            type: String,
+            required: true
+        },
         age: {
             type: Number,
             required: true
