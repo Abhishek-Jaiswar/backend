@@ -2,11 +2,11 @@ import { Patient } from "../models/hospital/patient.models.js"
 import { asyncHandler } from "../utils/asyncHandler.js"
 
 const patient = asyncHandler(async (req, res) => {
-    const { name, diagnosedWith, registrationNo, age, bloodGroup, gender, admittedIn } = req.body
+    const { name, inspectionDoctor, registrationNo, age, bloodGroup, gender, admittedIn } = req.body
 
     // Check if any required field is missing or empty
     if (
-        [name, diagnosedWith, registrationNo, age, bloodGroup, gender, admittedIn].some((field) => 
+        [name, inspectionDoctor, registrationNo, age, bloodGroup, gender, admittedIn].some((field) => 
             field?.trim() === ""
         )
     ) {
@@ -25,7 +25,7 @@ const patient = asyncHandler(async (req, res) => {
     // Create a new patient
     const newPatient = await Patient.create({
         name,
-        diagnosedWith,
+        inspectionDoctor,
         registrationNo,
         age,
         bloodGroup,

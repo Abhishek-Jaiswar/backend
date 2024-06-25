@@ -6,16 +6,16 @@ const patientSchema = new mongoose.Schema(
             type: String,
             required: true
         },
-        diagonsedWith: {
+        inspectionDoctor: {
             type: String,
             required: true
         },
         registrationNo: {
-            type: String,
+            type: String || Number,
             required: true
         },
         age: {
-            type: Number,
+            type: Number || String,
             required: true
         },
         bloodGroup: {
